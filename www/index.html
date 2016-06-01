@@ -19,6 +19,8 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="lib/pdfjs-dist/build/pdf.js"></script>
+    <script src="lib/angular-pdf/dist/angular-pdf.min.js"></script>
     <script src="js/app.js"></script>
   </head>
   <body ng-app="starter">
@@ -27,8 +29,15 @@
       <ion-header-bar class="bar-stable">
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content ng-controller="MainController">
+        <p>Opening: {{pdfUrl}}</p>
+
+        <div class="wrapper">
+          <ng-pdf template-url="partials/viewer.html" scale="page-fit"></ng-pdf>
+        </div>
+
       </ion-content>
     </ion-pane>
+
   </body>
 </html>

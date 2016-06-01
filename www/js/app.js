@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'pdf'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,3 +22,17 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.controller('MainController', ['$scope', function($scope){
+  var vm = this;
+
+  $scope.pdfUrl = null;     //The scope has to be used for angular-pdf to work
+  vm.activate = activate;
+
+  activate();
+
+  function activate(){
+    $scope.pdfUrl = 'resources/kbtri.pdf';
+  }
+}])
+
