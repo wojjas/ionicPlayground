@@ -26,13 +26,11 @@ angular.module('starter', ['ionic', 'pdf'])
 .controller('MainController', ['$scope', function($scope){
   var vm = this;
 
-  $scope.pdfUrl = null;     //The scope has to be used for angular-pdf to work
   vm.activate = activate;
 
   activate();
 
   function activate(){
-    $scope.pdfUrl = 'resources/kbtri.pdf';
   }
 }])
 
