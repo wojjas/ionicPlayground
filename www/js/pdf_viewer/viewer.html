@@ -1,1 +1,23 @@
-<canvas id="pdf-canvas"></canvas>
+<ion-pane ng-controller="MainController as MainCtrl">
+  <ion-header-bar class="bar-stable">
+    <div class="">
+      <button ng-click="goPrevious()"><i class="icon ion-chevron-left"></i></button>
+      <span>{{pageNum}}</span> / <span>{{pageCount}}</span>
+      <button ng-click="goNext()"><i class="icon ion-chevron-right"></i></button>
+      &#xA0;
+      <button ng-click="zoomOut()"><i class="icon ion-minus-round"></i></button>
+      <button ng-click="fit()"><i class="icon ion-search"></i></button>
+      <button ng-click="zoomIn()"><i class="icon ion-plus-round"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+      <ion-scroll zooming="true" direction="xy">
+        <canvas id="pdf-canvas"></canvas>
+      </ion-scroll>
+  </ion-content>
+</ion-pane>
+
+
+
+
+

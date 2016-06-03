@@ -1,20 +1,27 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    var controllerId = 'ViewerController';
+  var controllerId = 'ViewerController';
 
-    angular.module('starter')
-        .controller(controllerId, ['$scope', ViewerController]);
+  angular.module('starter')
+    .controller(controllerId, ['$scope', ViewerController]);
 
-    function ViewerController($scope) {
-        var vm = this;
+  function ViewerController($scope) {
+    var vm = this;
 
-        vm.activate = activate;
+    vm.isLoaded = null;
+    vm.activate = activate;
 
-        activate();
+    activate();
 
-        function activate() {
-          $scope.pdfUrl = 'resources/kbtri.pdf';
-        }
+    function activate() {
+      vm.isLoaded = false;
+      $scope.pdfUrl = 'resources/kbtri.pdf';
     }
+
+    $scope.onLoad = function () {
+      vm.isLoaded = true;
+      $scope.pageNum = $scope.pageNum;
+    }
+  }
 })();
