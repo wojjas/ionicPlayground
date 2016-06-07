@@ -21,7 +21,6 @@
 
     $scope.onLoad = function () {
       vm.isLoaded = true;
-      $scope.pageNum = $scope.pageNum;
     }
   }
 })();
